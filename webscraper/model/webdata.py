@@ -115,17 +115,14 @@ class WebData(OptionFilter):
         if params is not None and self.check_second_level_param_count(
                 params, self.CONSOLIDATE_DATA_PARAM_COUNT):
             funcs = []
-            funcs.append(self.method_options(
-                params[self.PARAMETER_ONE][self.PARAMETER_ONE],
-                web_data_consolidate_options))
-            funcs.append(self.method_options(
-                params[self.PARAMETER_TWO][self.PARAMETER_ONE],
-                web_data_consolidate_options))
+            for key in range(self.DATA_DEPTH):
+                funcs.append(self.consolidate_data_find_func(params, key))
             attrs = []
             f_data = [self.filtered_data, self.filtered_recursive_data]
             f_data_kw = [self.filtered_data_keywords,
                          self.filtered_recursive_data_keywords]
-            for func, data, kw, key in zip(funcs, f_data, f_data_kw, range(2)):
+            for func, data, kw, key in zip(funcs, f_data, f_data_kw,
+                                           range(self.DATA_DEPTH)):
                 attrs.append(self.consolidate_data_func_call(func, data, kw,
                                                              params[key]))
             self.create_web_data_object(attrs[self.PARAMETER_ONE],
