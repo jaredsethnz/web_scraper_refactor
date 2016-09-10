@@ -79,9 +79,7 @@ class WebFilter(OptionFilter):
         web_objs = self.sanitise_attributes(obj_attrs)
         return web_objs
 
-    def filter_by_keywords(self, *args):
-        data = args[self.PARAMETER_ONE]
-        data_kw = args[self.PARAMETER_TWO]
+    def filter_by_keywords(self, data_kw, data):
         obj_attr = []
         for d in data:
             try:

@@ -151,30 +151,7 @@ class WebData(OptionFilter):
     def filter_by_keywords(self, *args):
         data = args[self.PARAMETER_ONE]
         data_kw = args[self.PARAMETER_TWO]
-        obj_attr = []
-        for d in data:
-            try:
-                attrs = {}
-                for kw_pair in data_kw:
-                    tag_depth = self.check_data_int(
-                        kw_pair[self.PARAMETER_TWO])
-                    if tag_depth is not None:
-                        value = d.find_all(kw_pair[self.PARAMETER_ONE])
-                        value = value[tag_depth].string
-                        value = self.check_data_type(value) if \
-                            value else 'unknown'
-                        attrs[kw_pair[self.PARAMETER_THREE]] = value
-                    else:
-                        value = d.find(kw_pair[self.PARAMETER_ONE],
-                                       {kw_pair[self.PARAMETER_TWO]: kw_pair
-                                       [self.PARAMETER_THREE]}).string
-                        value = self.check_data_type(value) if \
-                            value else 'unknown'
-                        attrs[kw_pair[self.PARAMETER_THREE]] = value
-                obj_attr.append(attrs)
-            except (TypeError, KeyError, IndexError):
-                self.view.display_item(self.CONSOLIDATE_ERROR_MSG)
-        return obj_attr
+        return self.web_filter.filter_by_keywords(data_kw, data)
 
     def sanitise_attributes(self, obj_attrs):
         sanitised_obj_attrs = []
