@@ -113,33 +113,30 @@ class WebData(OptionFilter):
         params = self.check_second_level_args(args)
         if params is not None and self.check_second_level_param_count(
                 params, self.CONSOLIDATE_DATA_PARAM_COUNT):
-            func_one = self.method_options(
+            funcs = []
+            funcs.append(self.method_options(
                 params[self.PARAMETER_ONE][self.PARAMETER_ONE],
-                web_data_consolidate_options)
-            func_two = self.method_options(
+                web_data_consolidate_options))
+            funcs.append(self.method_options(
                 params[self.PARAMETER_TWO][self.PARAMETER_ONE],
-                web_data_consolidate_options)
-            try:
-                attr_one = func_one(self.filtered_data,
-                                    self.filtered_data_keywords,
-                                    params[self.PARAMETER_ONE]
-                                    [self.PARAMETER_TWO],
-                                    params[self.PARAMETER_ONE]
-                                    [self.PARAMETER_THREE])
-                attr_two = func_two(self.filtered_recursive_data,
-                                    self.filtered_recursive_data_keywords,
-                                    params[self.PARAMETER_TWO]
-                                    [self.PARAMETER_TWO],
-                                    params[self.PARAMETER_TWO]
-                                    [self.PARAMETER_THREE])
-                self.create_web_data_object(attr_one, attr_two)
-            except TypeError:
-                self.view.display_item(self.CONSOLIDATE_ERROR_MSG)
+                web_data_consolidate_options))
+            attrs = []
+            f_data = [self.filtered_data, self.filtered_recursive_data]
+            f_data_kw = [self.filtered_data_keywords,
+                         self.filtered_recursive_data_keywords]
+            for func, data, kw, key in zip(funcs, f_data, f_data_kw, range(2)):
+                attrs.append(self.consolidate_data_func_call(func, data, kw,
+                                                             params[key]))
+            self.create_web_data_object(attrs[self.PARAMETER_ONE],
+                                        attrs[self.PARAMETER_TWO])
 
-    def consolidate_data_extension(self, func, f_data, f_data_kw, params):
-        attr = func(f_data, f_data_kw, params[self.PARAMETER_TWO],
-                    params[self.PARAMETER_THREE])
-        return attr
+    def consolidate_data_func_call(self, func, f_data, f_data_kw, params):
+        try:
+            attr = func(f_data, f_data_kw, params[self.PARAMETER_TWO],
+                        params[self.PARAMETER_THREE])
+            return attr
+        except TypeError:
+            self.view.display_item(self.CONSOLIDATE_ERROR_MSG)
 
     def filter_by_children(self, *args):
         data = args[0]
