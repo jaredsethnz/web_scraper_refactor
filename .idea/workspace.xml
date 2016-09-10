@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bccba3ef-d14e-4344-bb6a-1360d529ace1" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webscraper/dvd_bluray_bestsellers.pickle" afterPath="$PROJECT_DIR$/webscraper/dvd_bluray_bestsellers.pickle" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webscraper/model/webdata.py" afterPath="$PROJECT_DIR$/webscraper/model/webdata.py" />
     </list>
     <ignored path="web_scraper_refactor.iws" />
@@ -42,8 +41,8 @@
           <file leaf-file-name="webdata.py" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/webscraper/model/webdata.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="495">
-                  <caret line="132" column="34" selection-start-line="132" selection-start-column="8" selection-end-line="132" selection-end-column="34" />
+                <state relative-caret-position="585">
+                  <caret line="133" column="34" selection-start-line="133" selection-start-column="8" selection-end-line="133" selection-end-column="34" />
                   <folding>
                     <element signature="e#0#9#0" expanded="true" />
                   </folding>
@@ -668,8 +667,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/webscraper/model/webdata.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="132" column="34" selection-start-line="132" selection-start-column="8" selection-end-line="132" selection-end-column="34" />
+        <state relative-caret-position="585">
+          <caret line="133" column="34" selection-start-line="133" selection-start-column="8" selection-end-line="133" selection-end-column="34" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
           </folding>

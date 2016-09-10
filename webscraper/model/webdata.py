@@ -5,6 +5,7 @@ from webscraper.view.consoleview import ConsoleView
 
 
 class WebData(OptionFilter):
+    DATA_DEPTH = 2
     CONSOLIDATE_DATA_PARAM_COUNT = 2
     CONSOLIDATE_ERROR_MSG = 'Error consolidating data, please try again...'
 
@@ -129,6 +130,10 @@ class WebData(OptionFilter):
                                                              params[key]))
             self.create_web_data_object(attrs[self.PARAMETER_ONE],
                                         attrs[self.PARAMETER_TWO])
+
+    def consolidate_data_find_func(self, params, index):
+        return self.method_options(params[index][self.PARAMETER_ONE],
+                                   web_data_consolidate_options)
 
     def consolidate_data_func_call(self, func, f_data, f_data_kw, params):
         try:
