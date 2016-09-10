@@ -41,12 +41,11 @@ class WebFilter(OptionFilter):
             self.view.display_item(self.COMMAND_ERROR_MSG)
         return filtered_recursive_data
 
-    def filter_urls(self, *args):
+    def filter_urls(self, data_options, filtered_data):
+        urls = []
         try:
-            data_options = self.check_second_level_args(args)[self
-                                                              .COMMAND_OPTION]
             self.view.display_item('filtering urls.....')
-            for data in self.filtered_data:
+            for data in filtered_data:
                 tag_depth = self.check_data_int(data_options[self.CLASS_ID])
                 if tag_depth is not None:
                     url = data.find_all(data_options[self.TAG_TYPE])
@@ -55,10 +54,10 @@ class WebFilter(OptionFilter):
                     url = data.find(data_options[self.TAG_TYPE], attrs={
                         data_options[self.CLASS_ID]:
                             data_options[self.CLASS_ID_NAME]})
-                    self.web_request.add_recursive_url(url['href'])
+                    urls.append(url['href'])
         except (TypeError, KeyError, IndexError):
             self.view.display_item(self.COMMAND_ERROR_MSG)
-            return
+        return urls
 
     def filter_by_children(self, *args):
         obj_attrs = []

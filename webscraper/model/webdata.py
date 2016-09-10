@@ -93,23 +93,11 @@ class WebData(OptionFilter):
                 filter_recursive_request_data(data_options, recursive_data)
 
     def filter_urls(self, *args):
-        try:
-            data_options = self.check_second_level_args(args)[self
-                                                              .COMMAND_OPTION]
-            self.view.display_item('filtering urls.....')
-            for data in self.filtered_data:
-                tag_depth = self.check_data_int(data_options[self.CLASS_ID])
-                if tag_depth is not None:
-                    url = data.find_all(data_options[self.TAG_TYPE])
-                    self.web_request.add_recursive_url(url[tag_depth]['href'])
-                else:
-                    url = data.find(data_options[self.TAG_TYPE], attrs={
-                        data_options[self.CLASS_ID]:
-                            data_options[self.CLASS_ID_NAME]})
-                    self.web_request.add_recursive_url(url['href'])
-        except (TypeError, KeyError, IndexError):
-            self.view.display_item(self.COMMAND_ERROR_MSG)
-            return
+        data_options = self.check_second_level_args(args)[self
+                                                          .COMMAND_OPTION]
+        urls = self.web_filter.filter_urls(data_options, self.filtered_data)
+        for url in urls:
+            self.web_request.add_recursive_url(url)
 
     def set_data_keywords(self, *args):
         kw_pairs = self.check_second_level_args(args)
