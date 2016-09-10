@@ -64,6 +64,9 @@ gathering data.....
 
 >>> cmd_test_1.onecmd('graph g--FormatSales')
 displaying graph.....
+
+>>> cmd_test_1.onecmd('data rs--best_selling_gaming.pickle')
+removing file best_selling_gaming.pickle.....
 """
 
 

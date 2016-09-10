@@ -4,6 +4,7 @@ from bs4 import BeautifulSoup
 from orderedset import OrderedSet
 
 from webscraper.model.optionfilter import OptionFilter
+from webscraper.model.webfilter import WebFilter
 from webscraper.model.webobject import WebObject
 from webscraper.view.consoleview import ConsoleView
 
@@ -18,6 +19,7 @@ class WebData(OptionFilter):
     def __init__(self, web_request, web_object_factory, data_handler):
         super(OptionFilter).__init__()
         self.web_request = web_request
+        self.web_filter = WebFilter()
         self.web_object_factory = web_object_factory
         self.data_handler = data_handler
         self.filtered_data = []
@@ -77,35 +79,18 @@ class WebData(OptionFilter):
         self.data_handler.remove_objects(args[self.PARAMETER_ONE])
 
     def get_request_data(self, *args):
-        try:
-            data_options = self.check_second_level_args(args)[self
-                                                              .COMMAND_OPTION]
-            data = self.web_request.get_request_data()
-            req_data = BeautifulSoup(data, 'html.parser') \
-                .findAll(data_options[self.TAG_TYPE],
-                         attrs={data_options[self.CLASS_ID]: data_options
-                         [self.CLASS_ID_NAME]})
-            for data in req_data:
-                self.filtered_data.append(data)
-                self.view.display_item('filtering data.....')
-        except TypeError:
-            self.view.display_item(self.COMMAND_ERROR_MSG)
-            return
+        data_options = self.check_second_level_args(args)[self
+                                                          .COMMAND_OPTION]
+        request_data = self.web_request.get_request_data()
+        self.filtered_data = self.web_filter.filter_request_data(data_options,
+                                                                 request_data)
 
     def get_recursive_request_data(self, *args):
-        try:
             data_options = self.check_second_level_args(args)[self
                                                               .COMMAND_OPTION]
-            for data in self.web_request.get_recursive_request_data():
-                self.view.display_item('filtering recursive data.....')
-                rec_data = BeautifulSoup(data, 'html.parser') \
-                    .find(data_options[self.TAG_TYPE],
-                          attrs={data_options[self.CLASS_ID]: data_options
-                          [self.CLASS_ID_NAME]})
-                self.filtered_recursive_data.append(rec_data)
-        except TypeError:
-            self.view.display_item(self.COMMAND_ERROR_MSG)
-            return
+            recursive_data = self.web_request.get_recursive_request_data()
+            self.filtered_recursive_data = self.web_filter.\
+                filter_recursive_request_data(data_options, recursive_data)
 
     def filter_urls(self, *args):
         try:

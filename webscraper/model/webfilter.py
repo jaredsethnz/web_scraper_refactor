@@ -1,37 +1,45 @@
+import re
+from bs4 import BeautifulSoup
+from orderedset import OrderedSet
+from webscraper.model.optionfilter import OptionFilter
+from webscraper.view.consoleview import ConsoleView
 
 
-class WebFilter(object):
+class WebFilter(OptionFilter):
+    TAG_TYPE = 0
+    CLASS_ID = 1
+    CLASS_ID_NAME = 2
 
-    def get_request_data(self, *args):
+    def __init__(self):
+        self.view = ConsoleView()
+
+    def filter_request_data(self, data_options, request_data):
+        filtered_data = []
         try:
-            data_options = self.check_second_level_args(args)[self
-                                                              .COMMAND_OPTION]
-            data = self.web_request.get_request_data()
-            req_data = BeautifulSoup(data, 'html.parser') \
+            req_data = BeautifulSoup(request_data, 'html.parser') \
                 .findAll(data_options[self.TAG_TYPE],
                          attrs={data_options[self.CLASS_ID]: data_options
                          [self.CLASS_ID_NAME]})
             for data in req_data:
-                self.filtered_data.append(data)
+                filtered_data.append(data)
                 self.view.display_item('filtering data.....')
         except TypeError:
             self.view.display_item(self.COMMAND_ERROR_MSG)
-            return
+        return filtered_data
 
-    def get_recursive_request_data(self, *args):
+    def filter_recursive_request_data(self, data_options, recursive_data):
+        filtered_recursive_data = []
         try:
-            data_options = self.check_second_level_args(args)[self
-                                                              .COMMAND_OPTION]
-            for data in self.web_request.get_recursive_request_data():
+            for data in recursive_data:
                 self.view.display_item('filtering recursive data.....')
                 rec_data = BeautifulSoup(data, 'html.parser') \
                     .find(data_options[self.TAG_TYPE],
                           attrs={data_options[self.CLASS_ID]: data_options
                           [self.CLASS_ID_NAME]})
-                self.filtered_recursive_data.append(rec_data)
+                filtered_recursive_data.append(rec_data)
         except TypeError:
             self.view.display_item(self.COMMAND_ERROR_MSG)
-            return
+        return filtered_recursive_data
 
     def filter_urls(self, *args):
         try:
