@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bccba3ef-d14e-4344-bb6a-1360d529ace1" name="Default" comment="" />
+    <list default="true" id="bccba3ef-d14e-4344-bb6a-1360d529ace1" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webscraper/model/webdata.py" afterPath="$PROJECT_DIR$/webscraper/model/webdata.py" />
+    </list>
     <ignored path="web_scraper_refactor.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -39,8 +41,8 @@
           <file leaf-file-name="webdata.py" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/webscraper/model/webdata.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="727">
-                  <caret line="136" column="66" selection-start-line="111" selection-start-column="4" selection-end-line="136" selection-end-column="66" />
+                <state relative-caret-position="412">
+                  <caret line="129" column="74" selection-start-line="129" selection-start-column="74" selection-end-line="129" selection-end-column="74" />
                   <folding>
                     <element signature="e#0#9#0" expanded="true" />
                   </folding>
@@ -103,8 +105,8 @@
           <file leaf-file-name="webfilter.py" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/webscraper/model/webfilter.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1755">
-                  <caret line="117" column="35" selection-start-line="117" selection-start-column="35" selection-end-line="117" selection-end-column="35" />
+                <state relative-caret-position="690">
+                  <caret line="105" column="23" selection-start-line="81" selection-start-column="4" selection-end-line="105" selection-end-column="23" />
                   <folding>
                     <element signature="e#0#9#0" expanded="true" />
                   </folding>
@@ -624,8 +626,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/webscraper/model/webdata.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="727">
-          <caret line="136" column="66" selection-start-line="111" selection-start-column="4" selection-end-line="136" selection-end-column="66" />
+        <state relative-caret-position="412">
+          <caret line="129" column="74" selection-start-line="129" selection-start-column="74" selection-end-line="129" selection-end-column="74" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
           </folding>

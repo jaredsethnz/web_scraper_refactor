@@ -136,6 +136,11 @@ class WebData(OptionFilter):
             except TypeError:
                 self.view.display_item(self.CONSOLIDATE_ERROR_MSG)
 
+    def consolidate_data_extension(self, func, f_data, f_data_kw, params):
+        attr = func(f_data, f_data_kw, params[self.PARAMETER_TWO],
+                    params[self.PARAMETER_THREE])
+        return attr
+
     def filter_by_children(self, *args):
         data = args[0]
         return self.web_filter.filter_by_children(data)
