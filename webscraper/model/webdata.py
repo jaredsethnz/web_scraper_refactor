@@ -1,18 +1,10 @@
 import re
-
-from bs4 import BeautifulSoup
-from orderedset import OrderedSet
-
 from webscraper.model.optionfilter import OptionFilter
 from webscraper.model.webfilter import WebFilter
-from webscraper.model.webobject import WebObject
 from webscraper.view.consoleview import ConsoleView
 
 
 class WebData(OptionFilter):
-    TAG_TYPE = 0
-    CLASS_ID = 1
-    CLASS_ID_NAME = 2
     CONSOLIDATE_DATA_PARAM_COUNT = 2
     CONSOLIDATE_ERROR_MSG = 'Error consolidating data, please try again...'
 
@@ -152,21 +144,6 @@ class WebData(OptionFilter):
         data = args[self.PARAMETER_ONE]
         data_kw = args[self.PARAMETER_TWO]
         return self.web_filter.filter_by_keywords(data_kw, data)
-
-    def sanitise_attributes(self, obj_attrs):
-        sanitised_obj_attrs = []
-        for dict in obj_attrs:
-            attrs = {}
-            for key, value in dict.items():
-                value = value.replace(key, '')
-                key = key.replace(value, '')
-                sanitized_key = key.replace('\n', '').replace(' ', '').lower()
-                sanitized_value = re.sub('[ ]+', ' ',
-                                         value.replace('\n', '')).strip()
-                sanitized_value = self.check_data_type(sanitized_value)
-                attrs[sanitized_key] = sanitized_value
-            sanitised_obj_attrs.append(attrs)
-        return sanitised_obj_attrs
 
     def create_web_data_object(self, attr_one, attr_two, obj_name='product'):
         if len(attr_two) > 0:

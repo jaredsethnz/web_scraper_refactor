@@ -107,9 +107,9 @@ class WebFilter(OptionFilter):
 
     def sanitise_attributes(self, obj_attrs):
         sanitised_obj_attrs = []
-        for dict in obj_attrs:
+        for dictionary in obj_attrs:
             attrs = {}
-            for key, value in dict.items():
+            for key, value in dictionary.items():
                 value = value.replace(key, '')
                 key = key.replace(value, '')
                 sanitized_key = key.replace('\n', '').replace(' ', '').lower()
