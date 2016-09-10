@@ -59,9 +59,8 @@ class WebFilter(OptionFilter):
             self.view.display_item(self.COMMAND_ERROR_MSG)
         return urls
 
-    def filter_by_children(self, *args):
+    def filter_by_children(self, data):
         obj_attrs = []
-        data = args[0]
         for d in data:
             names = OrderedSet()
             attrs = {}

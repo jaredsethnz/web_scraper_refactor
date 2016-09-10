@@ -145,25 +145,8 @@ class WebData(OptionFilter):
                 self.view.display_item(self.CONSOLIDATE_ERROR_MSG)
 
     def filter_by_children(self, *args):
-        obj_attrs = []
         data = args[0]
-        for d in data:
-            names = OrderedSet()
-            attrs = {}
-            try:
-                for dc in d.find_all('div'):
-                    name = dc.find('span')
-                    value = dc.find('div')
-                    if value and name is not None:
-                        if name.text not in names:
-                            names.add(name.text)
-                            attrs[name.text] = value.text
-                obj_attrs.append(attrs)
-            except AttributeError:
-                self.view.display_item('Error filtering data '
-                                       'from children.....')
-        web_objs = self.sanitise_attributes(obj_attrs)
-        return web_objs
+        return self.web_filter.filter_by_children(data)
 
     def filter_by_keywords(self, *args):
         data = args[self.PARAMETER_ONE]
