@@ -29,7 +29,7 @@ class WebData(object):
         self.view = ConsoleView()
 
     def handle_command(self, args):
-        return self.cmd_filter.command(args, web_data_options)
+        return self.cmd_filter.command(args, web_data_options, self)
 
     def get_data(self):
         return self.web_data_objects
@@ -136,7 +136,7 @@ class WebData(object):
 
     def consolidate_data_find_func(self, params, index):
         return self.cmd_filter.method_options(params[index][self.PARAMETER_ONE],
-                                              web_data_consolidate_options)
+                                              web_data_consolidate_options, self)
 
     def consolidate_data_func_call(self, func, f_data, f_data_kw, params):
         try:

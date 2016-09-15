@@ -30,10 +30,10 @@ class CommandFilter(object):
         else:
             return self.COMMAND_ERROR_MSG
 
-    def method_options(self, attr, options):
+    def method_options(self, attr, options, cmd_obj):
         option = options.get(attr)
         if option is not None:
-            return getattr(self, option)
+            return getattr(cmd_obj, option)
         else:
             return None
 

@@ -18,7 +18,7 @@ class GraphCreator(object):
         self.view = ConsoleView()
 
     def handle_command(self, args):
-        return self.cmd_filter.command(args, graph_creator_options)
+        return self.cmd_filter.command(args, graph_creator_options, self)
 
     def display_graph(self, *args):
 
