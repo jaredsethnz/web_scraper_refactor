@@ -2,10 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bccba3ef-d14e-4344-bb6a-1360d529ace1" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webscraper/dvd_bluray_bestsellers.pickle" afterPath="$PROJECT_DIR$/webscraper/dvd_bluray_bestsellers.pickle" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/savelist.pickle" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/webscraper/dvd_bluray_bestsellers.pickle" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/webscraper/model/optionfilter.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/webscraper/savelist.pickle" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/webscraper/test/doc/savelist.pickle" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.coverage" afterPath="$PROJECT_DIR$/.coverage" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webscraper/model/commandfilter.py" afterPath="$PROJECT_DIR$/webscraper/model/commandfilter.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webscraper/model/graphcreator.py" afterPath="$PROJECT_DIR$/webscraper/model/graphcreator.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webscraper/model/webdata.py" afterPath="$PROJECT_DIR$/webscraper/model/webdata.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webscraper/model/webfilter.py" afterPath="$PROJECT_DIR$/webscraper/model/webfilter.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webscraper/model/webrequest.py" afterPath="$PROJECT_DIR$/webscraper/model/webrequest.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webscraper/test/doc/.coverage" afterPath="$PROJECT_DIR$/webscraper/test/doc/.coverage" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webscraper/test/doc/combined_doctest.py" afterPath="$PROJECT_DIR$/webscraper/test/doc/combined_doctest.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webscraper/test/doc/command_error_doctest.py" afterPath="$PROJECT_DIR$/webscraper/test/doc/command_error_doctest.py" />
     </list>
     <ignored path="web_scraper_refactor.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -27,129 +38,11 @@
     <splitter split-orientation="horizontal" split-proportion="0.5">
       <split-first>
         <leaf>
-          <file leaf-file-name="webfilter.py" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/webscraper/model/webfilter.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="420">
-                  <caret line="30" column="47" selection-start-line="30" selection-start-column="40" selection-end-line="30" selection-end-column="47" />
-                  <folding>
-                    <element signature="e#0#9#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="webobject.py" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/webscraper/model/webobject.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-30">
-                  <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-                  <folding>
-                    <element signature="e#0#10#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="webrequest.py" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/webscraper/model/webrequest.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="135">
-                  <caret line="9" column="4" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="4" />
-                  <folding>
-                    <element signature="e#0#15#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="messagehandler.py" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/webscraper/model/messagehandler.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="0">
-                  <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="optionfilter.py" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/webscraper/model/optionfilter.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="2160">
-                  <caret line="144" column="41" selection-start-line="92" selection-start-column="4" selection-end-line="144" selection-end-column="41" />
-                  <folding>
-                    <element signature="e#0#33#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="graphcreator.py" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/webscraper/model/graphcreator.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="296">
-                  <caret line="20" column="72" selection-start-line="20" selection-start-column="72" selection-end-line="20" selection-end-column="72" />
-                  <folding>
-                    <element signature="e#0#14#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="webdata.py" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/webscraper/model/webdata.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="296">
-                  <caret line="138" column="80" selection-start-line="138" selection-start-column="80" selection-end-line="138" selection-end-column="80" />
-                  <folding>
-                    <element signature="e#0#9#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-first>
-      <split-second>
-        <leaf>
-          <file leaf-file-name="optionfilter.py" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/webscraper/model/optionfilter.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="540">
-                  <caret line="36" column="42" selection-start-line="36" selection-start-column="42" selection-end-line="36" selection-end-column="42" />
-                  <folding>
-                    <element signature="e#0#33#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
           <file leaf-file-name="commandfilter.py" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/webscraper/model/commandfilter.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="525">
-                  <caret line="35" column="34" selection-start-line="35" selection-start-column="34" selection-end-line="35" selection-end-column="34" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="main_automated.py" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/webscraper/main_automated.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="90">
-                  <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="cmd.py" pinned="false" current-in-tab="false">
-            <entry file="file:///Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/cmd.py">
-              <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="305">
-                  <caret line="216" column="0" selection-start-line="216" selection-start-column="0" selection-end-line="216" selection-end-column="0" />
+                  <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
@@ -167,14 +60,106 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="command.py" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/webscraper/cli/command.py">
+          <file leaf-file-name="graphcreator.py" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/webscraper/model/graphcreator.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="30">
+                  <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="messagehandler.py" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/webscraper/model/messagehandler.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="0">
+                  <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="webdata.py" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/webscraper/model/webdata.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="705">
+                  <caret line="90" column="79" selection-start-line="88" selection-start-column="16" selection-end-line="90" selection-end-column="79" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="webfilter.py" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/webscraper/model/webfilter.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="195">
+                  <caret line="15" column="51" selection-start-line="15" selection-start-column="51" selection-end-line="15" selection-end-column="51" />
+                  <folding>
+                    <element signature="e#0#9#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="webobject.py" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/webscraper/model/webobject.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="0">
+                  <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+                  <folding>
+                    <element signature="e#0#10#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="webrequest.py" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/webscraper/model/webrequest.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="420">
+                  <caret line="35" column="46" selection-start-line="35" selection-start-column="46" selection-end-line="35" selection-end-column="46" />
+                  <folding>
+                    <element signature="e#0#15#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="command_error_doctest.py" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/webscraper/test/doc/command_error_doctest.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="525">
+                  <caret line="79" column="0" selection-start-line="79" selection-start-column="0" selection-end-line="79" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="combined_doctest.py" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/webscraper/test/doc/combined_doctest.py">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="1050">
                   <caret line="70" column="0" selection-start-line="70" selection-start-column="0" selection-end-line="70" selection-end-column="0" />
                   <folding>
-                    <element signature="e#0#19#0" expanded="true" />
+                    <marker date="1473914742000" expanded="true" signature="3372:3435" ph="'...'" />
+                    <marker date="1473914742000" expanded="true" signature="3963:4002" ph="'...'" />
+                    <marker date="1473914742000" expanded="true" signature="4079:4141" ph="'...'" />
                   </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf>
+          <file leaf-file-name="commandfilter.py" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/webscraper/model/commandfilter.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="232">
+                  <caret line="20" column="51" selection-start-line="20" selection-start-column="51" selection-end-line="20" selection-end-column="51" />
+                  <folding />
                 </state>
               </provider>
             </entry>
@@ -196,16 +181,17 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/webscraper/test/doc/combined_doctest.py" />
         <option value="$PROJECT_DIR$/webscraper/test/doc/happy_day_doctest.py" />
         <option value="$PROJECT_DIR$/webscraper/model/datavalidator.py" />
-        <option value="$PROJECT_DIR$/webscraper/model/webfilter.py" />
         <option value="$PROJECT_DIR$/webscraper/cli/command.py" />
-        <option value="$PROJECT_DIR$/webscraper/model/webrequest.py" />
         <option value="$PROJECT_DIR$/webscraper/model/optionfilter.py" />
-        <option value="$PROJECT_DIR$/webscraper/model/commandfilter.py" />
-        <option value="$PROJECT_DIR$/webscraper/model/webdata.py" />
         <option value="$PROJECT_DIR$/webscraper/model/graphcreator.py" />
+        <option value="$PROJECT_DIR$/webscraper/model/commandfilter.py" />
+        <option value="$PROJECT_DIR$/webscraper/model/webfilter.py" />
+        <option value="$PROJECT_DIR$/webscraper/model/webdata.py" />
+        <option value="$PROJECT_DIR$/webscraper/model/webrequest.py" />
+        <option value="$PROJECT_DIR$/webscraper/test/doc/command_error_doctest.py" />
+        <option value="$PROJECT_DIR$/webscraper/test/doc/combined_doctest.py" />
       </list>
     </option>
   </component>
@@ -268,24 +254,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="webscraper" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="web_scraper_refactor" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="web_scraper_refactor" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="webscraper" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="view" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -376,7 +344,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="FullScreen" value="true" />
   </component>
-  <component name="RunManager" selected="Python.main_automated">
+  <component name="RunManager" selected="Python.main">
     <configuration default="false" name="Doctests in happy_day_doctest" type="tests" factoryName="Doctests" temporary="true" nameIsGenerated="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -426,6 +394,23 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="web_scraper_refactor" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/webscraper/model/commandfilter.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="main" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/webscraper" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="web_scraper_refactor" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/webscraper/main.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -564,16 +549,18 @@
       <option name="USE_KEYWORD" value="false" />
       <method />
     </configuration>
-    <list size="3">
+    <list size="4">
       <item index="0" class="java.lang.String" itemvalue="Python tests.Doctests in happy_day_doctest" />
       <item index="1" class="java.lang.String" itemvalue="Python.main_automated" />
       <item index="2" class="java.lang.String" itemvalue="Python.commandfilter" />
+      <item index="3" class="java.lang.String" itemvalue="Python.main" />
     </list>
     <recent_temporary>
-      <list size="3">
-        <item index="0" class="java.lang.String" itemvalue="Python.main_automated" />
-        <item index="1" class="java.lang.String" itemvalue="Python.commandfilter" />
-        <item index="2" class="java.lang.String" itemvalue="Python tests.Doctests in happy_day_doctest" />
+      <list size="4">
+        <item index="0" class="java.lang.String" itemvalue="Python.main" />
+        <item index="1" class="java.lang.String" itemvalue="Python.main_automated" />
+        <item index="2" class="java.lang.String" itemvalue="Python.commandfilter" />
+        <item index="3" class="java.lang.String" itemvalue="Python tests.Doctests in happy_day_doctest" />
       </list>
     </recent_temporary>
   </component>
@@ -605,11 +592,12 @@
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16463174" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32919708" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.43707094" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31167883" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.43357664" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.5051095" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -617,7 +605,6 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32951945" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
@@ -660,6 +647,11 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1473914742000" expanded="true" signature="3372:3435" ph="'...'" />
+            <marker date="1473914742000" expanded="true" signature="3963:4002" ph="'...'" />
+            <marker date="1473914742000" expanded="true" signature="4079:4141" ph="'...'" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -685,51 +677,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webscraper/test/doc/combined_doctest.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="574">
-          <caret line="170" column="0" selection-start-line="170" selection-start-column="0" selection-end-line="171" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webscraper/model/datavalidator.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="900">
-          <caret line="60" column="17" selection-start-line="60" selection-start-column="8" selection-end-line="60" selection-end-column="17" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webscraper/model/webfilter.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="30" column="47" selection-start-line="30" selection-start-column="40" selection-end-line="30" selection-end-column="47" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webscraper/model/webobject.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-30">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webscraper/model/messagehandler.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/webscraper/main_automated.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -746,51 +693,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webscraper/model/webrequest.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="4" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="4" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/webscraper/model/optionfilter.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="540">
           <caret line="36" column="42" selection-start-line="36" selection-start-column="42" selection-end-line="36" selection-end-column="42" />
-          <folding>
-            <element signature="e#0#33#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webscraper/model/commandfilter.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="35" column="34" selection-start-line="35" selection-start-column="34" selection-end-line="35" selection-end-column="34" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webscraper/model/webdata.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="296">
-          <caret line="138" column="80" selection-start-line="138" selection-start-column="80" selection-end-line="138" selection-end-column="80" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webscraper/model/graphcreator.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="296">
-          <caret line="20" column="72" selection-start-line="20" selection-start-column="72" selection-end-line="20" selection-end-column="72" />
-          <folding>
-            <element signature="e#0#14#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -801,6 +708,98 @@
           <folding>
             <element signature="e#0#19#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webscraper/model/datavalidator.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="900">
+          <caret line="60" column="17" selection-start-line="60" selection-start-column="8" selection-end-line="60" selection-end-column="17" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webscraper/model/graphcreator.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webscraper/model/messagehandler.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webscraper/model/webobject.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webscraper/model/webfilter.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="15" column="51" selection-start-line="15" selection-start-column="51" selection-end-line="15" selection-end-column="51" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webscraper/model/webdata.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="705">
+          <caret line="90" column="79" selection-start-line="88" selection-start-column="16" selection-end-line="90" selection-end-column="79" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webscraper/model/webrequest.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="35" column="46" selection-start-line="35" selection-start-column="46" selection-end-line="35" selection-end-column="46" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webscraper/test/doc/command_error_doctest.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="79" column="0" selection-start-line="79" selection-start-column="0" selection-end-line="79" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webscraper/test/doc/combined_doctest.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1050">
+          <caret line="70" column="0" selection-start-line="70" selection-start-column="0" selection-end-line="70" selection-end-column="0" />
+          <folding>
+            <marker date="1473914742000" expanded="true" signature="3372:3435" ph="'...'" />
+            <marker date="1473914742000" expanded="true" signature="3963:4002" ph="'...'" />
+            <marker date="1473914742000" expanded="true" signature="4079:4141" ph="'...'" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webscraper/model/commandfilter.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="232">
+          <caret line="20" column="51" selection-start-line="20" selection-start-column="51" selection-end-line="20" selection-end-column="51" />
+          <folding />
         </state>
       </provider>
     </entry>

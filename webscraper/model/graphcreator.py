@@ -1,6 +1,5 @@
 import decimal
 
-from webscraper.model.optionfilter import OptionFilter
 from webscraper.view.consoleview import ConsoleView
 from datetime import date
 import matplotlib.pyplot as plt

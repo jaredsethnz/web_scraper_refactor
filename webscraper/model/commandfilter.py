@@ -1,5 +1,6 @@
 import re
 
+
 class CommandFilter(object):
 
     COMMAND_OPTION = 0

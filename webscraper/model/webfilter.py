@@ -12,6 +12,8 @@ class WebFilter(object):
     TAG_TYPE = 0
     CLASS_ID = 1
     CLASS_ID_NAME = 2
+    COMMAND_ERROR_MSG = 'command error, run help command' \
+                        ' for command details.....'
 
     def __init__(self, data_validator):
         self.view = ConsoleView()

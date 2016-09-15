@@ -1,6 +1,3 @@
-import re
-from webscraper.model.optionfilter import OptionFilter
-from webscraper.model.webfilter import WebFilter
 from webscraper.view.consoleview import ConsoleView
 
 
@@ -44,7 +41,7 @@ class WebData(object):
 
     def print_data(self, *args):
         attr = self.cmd_filter.method_options(args[self.COMMAND_OPTION],
-                                   web_data_print_options)
+                                              web_data_print_options, self)
         if attr is not None:
             if not isinstance(attr, list):
                 self.view.display_item(args[self.COMMAND_OPTION] + ': ' +
@@ -78,25 +75,28 @@ class WebData(object):
         self.data_handler.remove_objects(args[self.PARAMETER_ONE])
 
     def get_request_data(self, *args):
-        data_options = self.cmd_filter.check_second_level_args(args)[self
-                                                          .COMMAND_OPTION]
-        request_data = self.web_request.get_request_data()
-        self.filtered_data = self.web_filter.filter_request_data(data_options,
-                                                                 request_data)
+        data_options = self.cmd_filter.check_second_level_args(args)
+        if data_options is not None:
+            data_options = data_options[self.COMMAND_OPTION]
+            request_data = self.web_request.get_request_data()
+            self.filtered_data = self.web_filter.filter_request_data(data_options,
+                                                                     request_data)
 
     def get_recursive_request_data(self, *args):
-            data_options = self.cmd_filter.check_second_level_args(args)[self
-                                                              .COMMAND_OPTION]
-            recursive_data = self.web_request.get_recursive_request_data()
-            self.filtered_recursive_data = self.web_filter.\
-                filter_recursive_request_data(data_options, recursive_data)
+            data_options = self.cmd_filter.check_second_level_args(args)
+            if data_options is not None:
+                data_options = data_options[self.COMMAND_OPTION]
+                recursive_data = self.web_request.get_recursive_request_data()
+                self.filtered_recursive_data = self.web_filter.\
+                    filter_recursive_request_data(data_options, recursive_data)
 
     def filter_urls(self, *args):
-        data_options = self.cmd_filter.check_second_level_args(args)[self
-                                                          .COMMAND_OPTION]
-        urls = self.web_filter.filter_urls(data_options, self.filtered_data)
-        for url in urls:
-            self.web_request.add_recursive_url(url)
+        data_options = self.cmd_filter.check_second_level_args(args)
+        if data_options is not None:
+            data_options = data_options[self.COMMAND_OPTION]
+            urls = self.web_filter.filter_urls(data_options, self.filtered_data)
+            for url in urls:
+                self.web_request.add_recursive_url(url)
 
     def set_data_keywords(self, *args):
         kw_pairs = self.cmd_filter.check_second_level_args(args)

@@ -33,7 +33,7 @@ class WebRequest(MessageHandler):
 
     def print_data(self, *args):
         attr = self.cmd_filter.method_options(args[self.COMMAND_OPTION],
-                                   web_request_print_options)
+                                              web_request_print_options, self)
         if attr is not None:
             if isinstance(attr, str):
                 self.view.display_item(args[self.COMMAND_OPTION] + ': ' +
