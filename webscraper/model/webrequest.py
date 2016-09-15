@@ -7,6 +7,9 @@ from webscraper.view.consoleview import ConsoleView
 
 class WebRequest(MessageHandler):
 
+    URL_SCHEME = 0
+    URL_SCHEME_HTTP = 'http'
+    URL_SCHEME_HTTPS = 'https'
     COMMAND_OPTION = 0
     PRINT_DATA_MSG = 'No data to display.....'
     URL_NOT_VALID_MSG = 'please enter a valid url.....'
@@ -26,7 +29,7 @@ class WebRequest(MessageHandler):
         self.view = ConsoleView()
 
     def handle_command(self, args):
-        return self.cmd_filter.command(args, web_request_options)
+        return self.cmd_filter.command(args, web_request_options, self)
 
     def print_data(self, *args):
         attr = self.cmd_filter.method_options(args[self.COMMAND_OPTION],

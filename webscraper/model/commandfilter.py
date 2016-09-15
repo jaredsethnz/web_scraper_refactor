@@ -22,8 +22,8 @@ class CommandFilter(object):
     def __init__(self, console_view):
         self.view = console_view
 
-    def command(self, args, options):
-        commands = self.check_args(args, options)
+    def command(self, args, options, cmd_obj):
+        commands = self.check_args(args, options, cmd_obj)
         if commands is not None:
             for command in commands:
                 command[self.COMMAND_OPTION](*command[1:])
@@ -37,7 +37,7 @@ class CommandFilter(object):
         else:
             return None
 
-    def check_args(self, args, options):
+    def check_args(self, args, options, cmd_obj):
         commands = []
         valid_commands = True
         for arg in args:
@@ -46,7 +46,7 @@ class CommandFilter(object):
             param = options.get(arg_param[self.COMMAND_OPTION])
             if param is not None and len(arg_param) == \
                     param[self.COMMAND_COUNT]:
-                method = getattr(self, param[self.COMMAND_OPTION])
+                method = getattr(cmd_obj, param[self.COMMAND_OPTION])
                 command.append(method)
                 value1 = arg_param[self.COMMAND_PARAM] if \
                     param[self.COMMAND_COUNT] > self.COMMAND_COUNT_1 else None

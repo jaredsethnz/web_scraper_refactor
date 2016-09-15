@@ -15,10 +15,10 @@ class WebData(object):
     CONSOLIDATE_ERROR_MSG = 'Error consolidating data, please try again...'
 
     def __init__(self, web_request, web_object_factory, data_handler,
-                 command_filter):
+                 command_filter, w_filter):
         self.web_request = web_request
         self.cmd_filter = command_filter
-        self.web_filter = WebFilter()
+        self.web_filter = w_filter
         self.web_object_factory = web_object_factory
         self.data_handler = data_handler
         self.filtered_data = []

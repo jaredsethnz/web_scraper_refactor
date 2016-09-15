@@ -1,7 +1,10 @@
 from cmd import Cmd
 
+from webscraper.model.commandfilter import CommandFilter
+from webscraper.model.datavalidator import DataValidator
 from webscraper.model.graphcreator import GraphCreator
 from webscraper.model.webdata import WebData
+from webscraper.model.webfilter import WebFilter
 from webscraper.model.webobject import DataHandler
 from webscraper.model.webobject import WebObjectFactory
 from webscraper.model.webrequest import *
@@ -13,12 +16,16 @@ class Command(Cmd):
     def __init__(self):
         Cmd.__init__(self)
         self.view = ConsoleView()
-        self.web_request = WebRequest()
+        self.data_validator = DataValidator(self.view)
+        self.cmd_filter = CommandFilter(self.view)
+        self.web_filter = WebFilter(self.data_validator)
+        self.web_request = WebRequest(self.data_validator, self.cmd_filter)
         self.web_object_factory = WebObjectFactory()
         self.data_handler = DataHandler()
         self.web_data = WebData(self.web_request, self.web_object_factory,
-                                self.data_handler)
-        self.graph_creator = GraphCreator(self.web_data)
+                                self.data_handler, self.cmd_filter,
+                                self.web_filter)
+        self.graph_creator = GraphCreator(self.web_data, self.cmd_filter)
 
     def do_request(self, args):
         """
