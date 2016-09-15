@@ -2,19 +2,17 @@ import requests
 from urllib.parse import urlparse
 
 from webscraper.model.messagehandler import MessageHandler
-from webscraper.model.optionfilter import OptionFilter
 from webscraper.view.consoleview import ConsoleView
 
 
-class WebRequest(OptionFilter, MessageHandler):
+class WebRequest(MessageHandler):
 
     COMMAND_OPTION = 0
     PRINT_DATA_MSG = 'No data to display.....'
     URL_NOT_VALID_MSG = 'please enter a valid url.....'
     CONNECTION_ERROR_MSG = 'data fetch error.....'
 
-    def __init__(self):
-        super(OptionFilter).__init__()
+    def __init__(self, data_validator):
         self.url = ''
         self.url_padding = ''
         self.recursive_urls = []
@@ -23,6 +21,7 @@ class WebRequest(OptionFilter, MessageHandler):
         self.requests_status_code = None
         self.recursive_request_data = []
         self.recursive_request_data_count = 0
+        self.validator = data_validator
         self.view = ConsoleView()
 
     def handle_command(self, args):
@@ -57,7 +56,7 @@ class WebRequest(OptionFilter, MessageHandler):
             self.view.display_item(self.URL_NOT_VALID_MSG)
 
     def add_recursive_url(self, *args):
-        if self.check_url((self.url_padding + args[self.COMMAND_OPTION])):
+        if self.validator.check_url((self.url_padding + args[self.COMMAND_OPTION])):
             self.recursive_urls.append(self.url_padding +
                                        args[self.COMMAND_OPTION])
             self.view.display_item('adding url.....')

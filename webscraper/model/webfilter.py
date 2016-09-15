@@ -1,11 +1,10 @@
 import re
 from bs4 import BeautifulSoup
 from orderedset import OrderedSet
-from webscraper.model.optionfilter import OptionFilter
 from webscraper.view.consoleview import ConsoleView
 
 
-class WebFilter(OptionFilter):
+class WebFilter(object):
 
     PARAMETER_ONE = 0
     PARAMETER_TWO = 1
@@ -14,8 +13,9 @@ class WebFilter(OptionFilter):
     CLASS_ID = 1
     CLASS_ID_NAME = 2
 
-    def __init__(self):
+    def __init__(self, data_validator):
         self.view = ConsoleView()
+        self.validator = data_validator
 
     def filter_request_data(self, data_options, request_data):
         filtered_data = []
@@ -50,7 +50,7 @@ class WebFilter(OptionFilter):
         try:
             self.view.display_item('filtering urls.....')
             for data in filtered_data:
-                tag_depth = self.check_data_int(data_options[self.CLASS_ID])
+                tag_depth = self.validator.check_data_int(data_options[self.CLASS_ID])
                 if tag_depth is not None:
                     url = data.find_all(data_options[self.TAG_TYPE])
                     self.web_request.add_recursive_url(url[tag_depth]['href'])
@@ -89,19 +89,19 @@ class WebFilter(OptionFilter):
             try:
                 attrs = {}
                 for kw_pair in data_kw:
-                    tag_depth = self.check_data_int(
+                    tag_depth = self.validator.check_data_int(
                         kw_pair[self.PARAMETER_TWO])
                     if tag_depth is not None:
                         value = d.find_all(kw_pair[self.PARAMETER_ONE])
                         value = value[tag_depth].string
-                        value = self.check_data_type(value) if \
+                        value = self.validator.check_data_type(value) if \
                             value else 'unknown'
                         attrs[kw_pair[self.PARAMETER_THREE]] = value
                     else:
                         value = d.find(kw_pair[self.PARAMETER_ONE],
                                        {kw_pair[self.PARAMETER_TWO]: kw_pair
                                        [self.PARAMETER_THREE]}).string
-                        value = self.check_data_type(value) if \
+                        value = self.validator.check_data_type(value) if \
                             value else 'unknown'
                         attrs[kw_pair[self.PARAMETER_THREE]] = value
                 obj_attr.append(attrs)
@@ -119,7 +119,7 @@ class WebFilter(OptionFilter):
                 sanitized_key = key.replace('\n', '').replace(' ', '').lower()
                 sanitized_value = re.sub('[ ]+', ' ',
                                          value.replace('\n', '')).strip()
-                sanitized_value = self.check_data_type(sanitized_value)
+                sanitized_value = self.validator.check_data_type(sanitized_value)
                 attrs[sanitized_key] = sanitized_value
             sanitised_obj_attrs.append(attrs)
         return sanitised_obj_attrs
