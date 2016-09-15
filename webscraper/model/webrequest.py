@@ -8,6 +8,7 @@ from webscraper.view.consoleview import ConsoleView
 
 class WebRequest(OptionFilter, MessageHandler):
 
+    COMMAND_OPTION = 0
     PRINT_DATA_MSG = 'No data to display.....'
     URL_NOT_VALID_MSG = 'please enter a valid url.....'
     CONNECTION_ERROR_MSG = 'data fetch error.....'

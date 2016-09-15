@@ -6,6 +6,10 @@ from webscraper.view.consoleview import ConsoleView
 
 
 class WebFilter(OptionFilter):
+
+    PARAMETER_ONE = 0
+    PARAMETER_TWO = 1
+    PARAMETER_THREE = 2
     TAG_TYPE = 0
     CLASS_ID = 1
     CLASS_ID_NAME = 2

@@ -8,6 +8,8 @@ import matplotlib.pyplot as plt
 
 class GraphCreator(OptionFilter):
 
+    PARAMETER_ONE = 0
+
     def __init__(self, web_data):
         super(OptionFilter).__init__()
         self.web_data = web_data

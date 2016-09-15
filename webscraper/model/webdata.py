@@ -5,6 +5,11 @@ from webscraper.view.consoleview import ConsoleView
 
 
 class WebData(OptionFilter):
+
+    COMMAND_OPTION = 0
+    PARAMETER_ONE = 0
+    PARAMETER_TWO = 1
+    PARAMETER_THREE = 2
     DATA_DEPTH = 2
     CONSOLIDATE_DATA_PARAM_COUNT = 2
     CONSOLIDATE_ERROR_MSG = 'Error consolidating data, please try again...'
