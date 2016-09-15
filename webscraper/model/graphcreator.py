@@ -6,12 +6,11 @@ from datetime import date
 import matplotlib.pyplot as plt
 
 
-class GraphCreator(OptionFilter):
+class GraphCreator(object):
 
     PARAMETER_ONE = 0
 
     def __init__(self, web_data):
-        super(OptionFilter).__init__()
         self.web_data = web_data
         self.data = {}
         self.graph_type = None

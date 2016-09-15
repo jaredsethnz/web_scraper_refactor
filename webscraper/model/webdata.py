@@ -4,7 +4,7 @@ from webscraper.model.webfilter import WebFilter
 from webscraper.view.consoleview import ConsoleView
 
 
-class WebData(OptionFilter):
+class WebData(object):
 
     COMMAND_OPTION = 0
     PARAMETER_ONE = 0
@@ -15,7 +15,6 @@ class WebData(OptionFilter):
     CONSOLIDATE_ERROR_MSG = 'Error consolidating data, please try again...'
 
     def __init__(self, web_request, web_object_factory, data_handler):
-        super(OptionFilter).__init__()
         self.web_request = web_request
         self.web_filter = WebFilter()
         self.web_object_factory = web_object_factory
