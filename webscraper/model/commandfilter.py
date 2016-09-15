@@ -1,4 +1,4 @@
-
+import re
 
 class CommandFilter(object):
 

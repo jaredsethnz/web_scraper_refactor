@@ -14,8 +14,10 @@ class WebData(object):
     CONSOLIDATE_DATA_PARAM_COUNT = 2
     CONSOLIDATE_ERROR_MSG = 'Error consolidating data, please try again...'
 
-    def __init__(self, web_request, web_object_factory, data_handler):
+    def __init__(self, web_request, web_object_factory, data_handler,
+                 command_filter):
         self.web_request = web_request
+        self.cmd_filter = command_filter
         self.web_filter = WebFilter()
         self.web_object_factory = web_object_factory
         self.data_handler = data_handler
@@ -27,7 +29,7 @@ class WebData(object):
         self.view = ConsoleView()
 
     def handle_command(self, args):
-        return self.command(args, web_data_options)
+        return self.cmd_filter.command(args, web_data_options)
 
     def get_data(self):
         return self.web_data_objects
@@ -41,7 +43,7 @@ class WebData(object):
         del self.web_data_objects[:]
 
     def print_data(self, *args):
-        attr = self.method_options(args[self.COMMAND_OPTION],
+        attr = self.cmd_filter.method_options(args[self.COMMAND_OPTION],
                                    web_data_print_options)
         if attr is not None:
             if not isinstance(attr, list):
@@ -76,28 +78,28 @@ class WebData(object):
         self.data_handler.remove_objects(args[self.PARAMETER_ONE])
 
     def get_request_data(self, *args):
-        data_options = self.check_second_level_args(args)[self
+        data_options = self.cmd_filter.check_second_level_args(args)[self
                                                           .COMMAND_OPTION]
         request_data = self.web_request.get_request_data()
         self.filtered_data = self.web_filter.filter_request_data(data_options,
                                                                  request_data)
 
     def get_recursive_request_data(self, *args):
-            data_options = self.check_second_level_args(args)[self
+            data_options = self.cmd_filter.check_second_level_args(args)[self
                                                               .COMMAND_OPTION]
             recursive_data = self.web_request.get_recursive_request_data()
             self.filtered_recursive_data = self.web_filter.\
                 filter_recursive_request_data(data_options, recursive_data)
 
     def filter_urls(self, *args):
-        data_options = self.check_second_level_args(args)[self
+        data_options = self.cmd_filter.check_second_level_args(args)[self
                                                           .COMMAND_OPTION]
         urls = self.web_filter.filter_urls(data_options, self.filtered_data)
         for url in urls:
             self.web_request.add_recursive_url(url)
 
     def set_data_keywords(self, *args):
-        kw_pairs = self.check_second_level_args(args)
+        kw_pairs = self.cmd_filter.check_second_level_args(args)
         if kw_pairs is not None:
             for kw_pair in kw_pairs:
                 keywords = [kw_pair[0], kw_pair[1], kw_pair[2]]
@@ -106,7 +108,7 @@ class WebData(object):
                 self.filtered_data_keywords.append(keywords)
 
     def set_recursive_data_keywords(self, *args):
-        kw_pairs = self.check_second_level_args(args)
+        kw_pairs = self.cmd_filter.check_second_level_args(args)
         if kw_pairs is not None:
             for kw_pair in kw_pairs:
                 r_keywords = [kw_pair[0], kw_pair[1], kw_pair[2]]
@@ -115,8 +117,8 @@ class WebData(object):
                 self.filtered_recursive_data_keywords.append(r_keywords)
 
     def consolidate_data(self, *args):
-        params = self.check_second_level_args(args)
-        if params is not None and self.check_second_level_param_count(
+        params = self.cmd_filter.check_second_level_args(args)
+        if params is not None and self.cmd_filter.check_second_level_param_count(
                 params, self.CONSOLIDATE_DATA_PARAM_COUNT):
             funcs = []
             for key in range(self.DATA_DEPTH):
@@ -133,8 +135,8 @@ class WebData(object):
                                         attrs[self.PARAMETER_TWO])
 
     def consolidate_data_find_func(self, params, index):
-        return self.method_options(params[index][self.PARAMETER_ONE],
-                                   web_data_consolidate_options)
+        return self.cmd_filter.method_options(params[index][self.PARAMETER_ONE],
+                                              web_data_consolidate_options)
 
     def consolidate_data_func_call(self, func, f_data, f_data_kw, params):
         try:

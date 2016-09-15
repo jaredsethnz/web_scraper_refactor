@@ -12,7 +12,7 @@ class WebRequest(MessageHandler):
     URL_NOT_VALID_MSG = 'please enter a valid url.....'
     CONNECTION_ERROR_MSG = 'data fetch error.....'
 
-    def __init__(self, data_validator):
+    def __init__(self, data_validator, command_filter):
         self.url = ''
         self.url_padding = ''
         self.recursive_urls = []
@@ -22,13 +22,14 @@ class WebRequest(MessageHandler):
         self.recursive_request_data = []
         self.recursive_request_data_count = 0
         self.validator = data_validator
+        self.cmd_filter = command_filter
         self.view = ConsoleView()
 
     def handle_command(self, args):
-        return self.command(args, web_request_options)
+        return self.cmd_filter.command(args, web_request_options)
 
     def print_data(self, *args):
-        attr = self.method_options(args[self.COMMAND_OPTION],
+        attr = self.cmd_filter.method_options(args[self.COMMAND_OPTION],
                                    web_request_print_options)
         if attr is not None:
             if isinstance(attr, str):

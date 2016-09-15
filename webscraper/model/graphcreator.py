@@ -10,14 +10,15 @@ class GraphCreator(object):
 
     PARAMETER_ONE = 0
 
-    def __init__(self, web_data):
+    def __init__(self, web_data, command_filter):
         self.web_data = web_data
+        self.cmd_filter = command_filter
         self.data = {}
         self.graph_type = None
         self.view = ConsoleView()
 
     def handle_command(self, args):
-        return self.command(args, graph_creator_options)
+        return self.cmd_filter.command(args, graph_creator_options)
 
     def display_graph(self, *args):
 
