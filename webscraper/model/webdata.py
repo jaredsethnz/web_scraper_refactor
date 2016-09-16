@@ -79,8 +79,8 @@ class WebData(object):
         if data_options is not None:
             data_options = data_options[self.COMMAND_OPTION]
             request_data = self.web_request.get_request_data()
-            self.filtered_data = self.web_filter.filter_request_data(data_options,
-                                                                     request_data)
+            self.filtered_data = self.web_filter.\
+                filter_request_data(data_options, request_data)
 
     def get_recursive_request_data(self, *args):
             data_options = self.cmd_filter.check_second_level_args(args)
@@ -94,7 +94,8 @@ class WebData(object):
         data_options = self.cmd_filter.check_second_level_args(args)
         if data_options is not None:
             data_options = data_options[self.COMMAND_OPTION]
-            urls = self.web_filter.filter_urls(data_options, self.filtered_data)
+            urls = self.web_filter.\
+                filter_urls(data_options, self.filtered_data)
             for url in urls:
                 self.web_request.add_recursive_url(url)
 
@@ -118,7 +119,8 @@ class WebData(object):
 
     def consolidate_data(self, *args):
         params = self.cmd_filter.check_second_level_args(args)
-        if params is not None and self.cmd_filter.check_second_level_param_count(
+        if params is not None and self.cmd_filter.\
+                check_second_level_param_count(
                 params, self.CONSOLIDATE_DATA_PARAM_COUNT):
             funcs = []
             for key in range(self.DATA_DEPTH):
@@ -135,8 +137,9 @@ class WebData(object):
                                         attrs[self.PARAMETER_TWO])
 
     def consolidate_data_find_func(self, params, index):
-        return self.cmd_filter.method_options(params[index][self.PARAMETER_ONE],
-                                              web_data_consolidate_options, self)
+        return self.cmd_filter.method_options(
+            params[index][self.PARAMETER_ONE],
+            web_data_consolidate_options, self)
 
     def consolidate_data_func_call(self, func, f_data, f_data_kw, params):
         try:

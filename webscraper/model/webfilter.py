@@ -52,7 +52,8 @@ class WebFilter(object):
         try:
             self.view.display_item('filtering urls.....')
             for data in filtered_data:
-                tag_depth = self.validator.check_data_int(data_options[self.CLASS_ID])
+                tag_depth = self.validator.\
+                    check_data_int(data_options[self.CLASS_ID])
                 if tag_depth is not None:
                     url = data.find_all(data_options[self.TAG_TYPE])
                     self.web_request.add_recursive_url(url[tag_depth]['href'])
@@ -121,7 +122,8 @@ class WebFilter(object):
                 sanitized_key = key.replace('\n', '').replace(' ', '').lower()
                 sanitized_value = re.sub('[ ]+', ' ',
                                          value.replace('\n', '')).strip()
-                sanitized_value = self.validator.check_data_type(sanitized_value)
+                sanitized_value = self.validator.\
+                    check_data_type(sanitized_value)
                 attrs[sanitized_key] = sanitized_value
             sanitised_obj_attrs.append(attrs)
         return sanitised_obj_attrs

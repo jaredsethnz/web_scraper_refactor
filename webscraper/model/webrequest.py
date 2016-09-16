@@ -60,7 +60,8 @@ class WebRequest(MessageHandler):
             self.view.display_item(self.URL_NOT_VALID_MSG)
 
     def add_recursive_url(self, *args):
-        if self.validator.check_url((self.url_padding + args[self.COMMAND_OPTION])):
+        if self.validator.\
+                check_url((self.url_padding + args[self.COMMAND_OPTION])):
             self.recursive_urls.append(self.url_padding +
                                        args[self.COMMAND_OPTION])
             self.view.display_item('adding url.....')

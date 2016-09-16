@@ -62,7 +62,7 @@ class DataValidator(object):
         valid_url = False
         match = urlparse(url)
         if match[self.URL_SCHEME] == self.URL_SCHEME_HTTP or \
-                        match[self.URL_SCHEME] == self.URL_SCHEME_HTTPS:
+                match[self.URL_SCHEME] == self.URL_SCHEME_HTTPS:
             valid_url = True
         return valid_url
 
